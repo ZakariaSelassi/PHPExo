@@ -7,6 +7,6 @@
   <title>Document</title>
 </head>
 <body>
-  <div>TEST</div>
+  <div>Ville ajouté </div>
 </body>
 </html>
