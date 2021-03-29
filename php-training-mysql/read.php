@@ -25,6 +25,7 @@
    </thead>
       <!-- Afficher la liste des randonnées -->
     <?php 
+       
         $sql = $db->prepare("Select * from hiking");
         $sql->execute();
                
@@ -37,8 +38,8 @@
           <td>".$data['distance']."</td>
           <td>".$data['duration']."</td>
           <td>".$data['height_difference']."</td>
-          <td><button type='button' name='update' class='btn btn-light text-wrap'><a href='verification.php?id=".$data['id']."'>Update</a></button></td>
-          <td><button type='button' name='delete' class='btn btn-light text-wrap'><a href='verification.php?id=".$data['id']."'>Delete</a></button></td></tr>"; 
+          <td><button type='button' name='update' class='btn btn-light text-wrap'><a href='update.php?id=".$data['id']."'>Update</a></button></td>
+          <td><button type='button' name='delete' class='btn btn-light text-wrap'><a href='delete.php?id=".$data['id']."'>Delete</a></button></td></tr>"; 
         }
     ?>   
     </table>
