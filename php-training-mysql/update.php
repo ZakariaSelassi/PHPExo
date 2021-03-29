@@ -12,11 +12,12 @@
 		$height_difference = isset($_POST['height_difference']) ? $_POST['height_difference'] : '';
 		$stmt = $db -> prepare('UPDATE hiking SET id = ?, name = ?, difficulty = ?, distance = ?, duration = ?, height_difference = ? where id = ?');
 		$stmt->execute([$id,$name,$difficulty,$distance,$duration,$height_difference,$_GET['id']]);
-
+		header('Location: read.php');
 		}
-		$sql = $db -> prepare("select * from hiking");
-	$sql->execute();
-	$data = $sql->fetch(PDO::FETCH_ASSOC);
+		$sql = $db -> prepare("select * from hiking where id = ?");
+		$sql->execute([$_GET['id']]);
+		$data = $sql->fetch(PDO::FETCH_ASSOC);
+	
 	}
 	
 ?>
