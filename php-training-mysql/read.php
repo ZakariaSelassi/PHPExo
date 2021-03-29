@@ -8,14 +8,18 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
-    <div class="row d-flex justify-content-center mx-auto w-50" >
+    <div class="row d-flex flex-column  justify-content-center mx-auto w-50" >
     <h1>Liste des randonnées</h1>
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
+    
     <table class="table table-dark">
     <thead>
     <tr>
       <th scope="col">#</th>
       <th scope="col">First</th>
       <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+      <th scope="col">Handle</th>
       <th scope="col">Handle</th>
     </tr>
    </thead>
@@ -27,18 +31,19 @@
         while($data = $sql->fetch())
         {
           echo "<tr>
-          <td>".$data['id']."</td>
+          <td name='id'>".$data['id']."</td>
           <td>".$data['name'] ."</td>
           <td>".$data['difficulty']."</td>
           <td>".$data['distance']."</td>
           <td>".$data['duration']."</td>
-          <td>".$data['height_difference']."</td></tr>";
+          <td>".$data['height_difference']."</td>
+          <td><button type='button' name='update' class='btn btn-light text-wrap'><a href='verification.php?id=".$data['id']."'>Update</a></button></td>
+          <td><button type='button' name='delete' class='btn btn-light text-wrap'><a href='verification.php?id=".$data['id']."'>Delete</a></button></td></tr>"; 
         }
-    ?> 
-
-  
-  </table>
-      <div class="row">
+    ?>   
+    </table>
+  </form>
+      <div>
         <button type="button" class="btn btn-dark text-wrap"><a href="create.php">  Add new one</a></button>
       </div>
   </div>
