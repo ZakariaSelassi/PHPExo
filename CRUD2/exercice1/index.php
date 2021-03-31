@@ -20,11 +20,11 @@
         </div>
         <p>Fidelity</p>
         <div>
-            <input type="radio" name="fidelity">
+            <input type="radio" name="fidelity" value="1">
             <label for="agree"> Agree</label>
         </div>
         <div>
-            <input type="radio" name="fidelity">
+            <input type="radio" name="fidelity" value="0">
             <label for="desagree"> desagree</label>
         </div>
         cardeNumber : <input type="number" name="cardNumber">
