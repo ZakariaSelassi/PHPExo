@@ -28,6 +28,8 @@
             <label for="desagree"> desagree</label>
         </div>
         cardeNumber : <input type="number" name="cardNumber">
+        typeCard : <input type="number" name="typeCard">
+
         <button type="submit" name="submit">Add to db</button>
     </form>
 </body>
