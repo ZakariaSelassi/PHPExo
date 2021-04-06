@@ -5,11 +5,11 @@
         {
             
         }
-        public function getCss($name,$src)
+        public function creatStyle($name,$src)
         {
             echo "<link rel=$name href=$src>";
         }
-        public function getMeta(){
+        public function createMeta(){
             echo '
             <meta charset="UTF-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
