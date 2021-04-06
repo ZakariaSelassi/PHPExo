@@ -16,9 +16,10 @@ class Form{
     public function end(){
         echo '</form>';
     }
-    public function input($title,$type,$name){
+    public function input($title,$type,$name,$step = 0){
         echo '<p><label>'.$title.'</label></p>';
-        echo '<input type="'.$type.'" name="'.$name.'">';
+        echo '<input type="'.$type.'" name="'.$name.'" step="'.$step.'">';
+        
     }
     // title , $name, $item
     public function select($title,$name,$items){

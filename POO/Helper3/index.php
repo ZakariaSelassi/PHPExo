@@ -2,6 +2,7 @@
 require 'form.php';
 $verif = new Validator();
 $verif->validateCharacter();
+$verif->validateInteger();
 $verif->sendData(); ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,6 +21,8 @@ $verif->sendData(); ?>
     $formulaire->create('index.php');
     $formulaire->input('lastName','text','lastName');
     $formulaire->input('firstName','text','firstName');
+    $formulaire->input('number','number','number');
+    $formulaire->input('number','number','number',0.1);
     $formulaire->submit('modifier');
     $formulaire->end();
     ?>

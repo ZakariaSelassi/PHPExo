@@ -22,13 +22,31 @@ class Validator{
     }
 
 
-    public function validateInteger($data){
+    public function validateInteger(){
+        if(isset($_POST['number']))
+        {
+            $data = $_POST['number'];
+            if(!is_int($data)){
+                trigger_error("Vous devez saisir un nombre obliger ma gueule",E_USER_WARNING);
+            }
+            $this->$data =$data;
+        }
+      
 
     }
 
-    public function validateFloat($data)
+    public function validateFloat()
     {
 
+        if(isset($_POST['float']))
+        {
+            $data = $_POST['float'];
+            if(!is_float($data)){
+                trigger_error("Vous devez saisir un nombre obligatoire",E_USER_WARNING);
+            }
+            $this->$data =$data;
+        }
+      
     }
     public function sendData(){
         if(isset($_POST['submit'])){
@@ -37,7 +55,8 @@ class Validator{
             $last = $_POST['lastName'];
             echo $last;
             $first = $_POST['firstName'];
-            if(!$this->validateCharacter($last) && !$this->validateCharacter($first) && !empty($_POST['lastName']) && !empty($_POST['firstName']))
+            $data = $_POST['number'];
+            if(!$this->validateCharacter($last) && !$this->validateCharacter($first) && !$this->validateCharacter($data) && !empty($_POST['lastName']) && !empty($_POST['firstName']) && !empty($_POST['number']))
             {
                 echo "send";
             }else{
