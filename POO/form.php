@@ -43,7 +43,8 @@ class Form{
     public function checkbox($type,$values){
         echo '<p>Select a food:</p>';
         foreach($values as $value){
-            echo '<input type="'.$type.'" name="'.$value.'" value="'.$value.'">';
+            echo '<input type="'.$type.'" name="'.$value.'" value="'.$value.'">
+            <label>'.$value.'</label>';
         }
     }
     public function submit($modifier){

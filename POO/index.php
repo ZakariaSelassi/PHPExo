@@ -8,5 +8,6 @@
     $formulaire->input('firstName','text','name');
     $formulaire->select('country','country',$country);
     $formulaire->radio("radio",$country);
+    $formulaire->checkbox("checkbox",$country);
     $formulaire->submit('modifier');
     $formulaire->end();
