@@ -1,6 +1,7 @@
 <?php require 'validator.php';
 require 'form.php';
 $verif = new Validator();
+$verif->validateCharacter();
 $verif->sendData(); ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,15 +18,10 @@ $verif->sendData(); ?>
     $formulaire = new Form();
     $country = array("Belgium","France","Deutsh","Danemark");
     $formulaire->create('index.php');
-    $formulaire->input('lastName','text','name');
-    $formulaire->input('firstName','text','name');
-    $formulaire->select('country','country',$country);
-    $formulaire->radio("radio",$country);
-    $formulaire->checkbox("checkbox",$country);
+    $formulaire->input('lastName','text','lastName');
+    $formulaire->input('firstName','text','firstName');
     $formulaire->submit('modifier');
     $formulaire->end();
-    
-  
     ?>
     </div>
 </body>
