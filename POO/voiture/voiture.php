@@ -56,7 +56,7 @@ class Voiture{
         if(!is_int($this->km)){
             trigger_error("Error ", E_USER_WARNING);
         }else{
-            if($this->km < 100000){
+            if($this->km <100000){
                 $this->usure = "Low";
             }else if($this->km > 100000){
                 $this->usure = "Middle";
@@ -99,11 +99,11 @@ class Voiture{
         $this->setKm($drive);  
     }
 
-    public function display(){
+    public function display($src){
 
         echo '<tr>
-                    
-                    <th scope="row">'.$this->imma.'</th>
+                    <td><img src="'.$src.'" width="100" height="100"></td>
+                    <td >'.$this->imma.'</td>
                     <td>'.$this->date.'</td>
                     <td>'.$this->km.'</td>
                     <td>'.$this->modele.'</td>
