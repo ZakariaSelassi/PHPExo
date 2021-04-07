@@ -9,12 +9,12 @@
 </head>
 <body>
     <?php 
-        $myCar = new Voiture();
-        $myCar->checkType("Audi");
-        $myCar->checkVehicule(3.6);
-        $myCar->checkCountry("FR");
-        $myCar->checkKm(199000);
-        $myCar->checkCirculation('2019-05-20');
+        $myCar = new Voiture("FR","2019-05-20",150000,"Sportback","Audi","Orange",2.5);
+        $myCar->checkType();
+        $myCar->checkVehicule();
+        $myCar->checkCountry();
+        $myCar->checkKm();
+        $myCar->checkCirculation();
         echo "<pre>";
         print_r($myCar);
         echo "</pre>";
