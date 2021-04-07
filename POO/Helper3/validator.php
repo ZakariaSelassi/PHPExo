@@ -37,7 +37,6 @@ class Validator{
 
     public function validateFloat()
     {
-
         if(isset($_POST['float']))
         {
             $data = $_POST['float'];
