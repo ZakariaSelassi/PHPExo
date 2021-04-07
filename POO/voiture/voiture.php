@@ -13,6 +13,7 @@ class Voiture{
     private $reserved;
     public function __construct($imma,$date,$km,$modele,$marque,$couleur,$poids)
     {
+        //ajouter set directement 
         $this->imma = $imma;
         $this->date = $date;
         $this->km = $km;
@@ -79,25 +80,39 @@ class Voiture{
             $date1 = date_create($now);
             $date2 = date_create($this->date);
             $interval = date_diff($date1,$date2);
-            $format = $interval->format('Years spent since your circulation : %y Year %m Month %d Days');
+            $format = $interval->format('%y %m  %d ');
             return $this->date = $format;
         }else{echo "eROROROROROROR";}    
     }
 
     public function rouler($move)
     {
-        echo '<p>la voiture va avancer de : '. $move.'</p>';
+        $drive = $this->km + $move;
+        echo '<p>la voiture va avancer de : '.$move.'</p>';
         
-        echo $this->setKm($move);
-        if($move > 200000){
-           echo $move . $this->usure = "Hight";
+        //echo $this->setKm($drive);
+        if($drive > 200000){
+           echo $drive ." ". $this->usure = "Hight";
         }else{
-            echo $move. $this->usure = "Low";
+            echo $drive ." ". $this->usure = "Low";
         }
-        return $this->setKm($move);
-         
+        $this->setKm($drive);  
     }
 
+    public function display(){
+
+        echo '<tr>
+                    
+                    <th scope="row">'.$this->imma.'</th>
+                    <td>'.$this->date.'</td>
+                    <td>'.$this->km.'</td>
+                    <td>'.$this->modele.'</td>
+                    <td>'.$this->marque.'</td>
+                    <td>'.$this->couleur.'</td>
+                    <td>'.$this->poids.'</td>
+                </tr>';
+           
+    }
     // Getters 
     public function imma()
     {
