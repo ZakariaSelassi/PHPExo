@@ -10,4 +10,5 @@
         $password = $_POST['password'];
 
         $user->createUsers($username,$email,$password);
+        header('Location:home.php');
     }

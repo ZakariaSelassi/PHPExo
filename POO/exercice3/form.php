@@ -12,7 +12,7 @@ class Form{
         echo '<input type="'.$type.'" name="'.$name.'">';
     }
     public function submit($modifier){
-        echo '<p><button type="submit" name="submit">'.$modifier.'</button></p>';
+        echo '<div><button type="submit" name="submit" class="btn btn-primary mt-1" >'.$modifier.'</button></div>';
     }
 }
 

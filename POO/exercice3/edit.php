@@ -10,7 +10,7 @@
 </head>
 <body>
   <div class="w-25 m-auto mt-5 ">
-      <h1 class="m-auto">Register</h1>
+      <h1 class="m-auto">Edit</h1>
       <?php 
           $form = new Form();
           $form->create('process.php');

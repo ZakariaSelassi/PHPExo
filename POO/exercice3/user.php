@@ -23,9 +23,13 @@ class User extends DataBase{
                 <td>'.$item['id'].'</td>
                 <td>'.$item['username'].'</td>
                 <td>'.$item['email'].'</td>
-      </tr>';
+                <td>
+                    <a href="edit.php?id='.$item['id'].'">Edit</a>
+                    <a href="delete.php?id='.$item['id'].'">Delete</a>
+                </td>
+            </tr>';
     }
-public function createUsers($username,$email,$password){
+    public function createUsers($username,$email,$password){
        try
        {
         $sql = "INSERT INTO user (username,email,password) values (:username,:email,:password)";
@@ -33,15 +37,8 @@ public function createUsers($username,$email,$password){
         $stmt -> bindParam(":username",$username);
         $stmt -> bindParam(":email",$email);
         $stmt -> bindParam(":password",$password);
-        
         $data = $stmt->execute();
-        if(!$data)
-        {
-            echo $stmt->errorCode();
-        }else{
-            echo $stmt -> rowCount();
-            echo "New clients as been register !";
-        }
+        if(!$data){ echo $stmt->errorCode();}else{echo $stmt -> rowCount();echo "New clients as been register !";}
 
        }catch(PDOException $e){
            echo $e->getMessage();
@@ -49,7 +46,9 @@ public function createUsers($username,$email,$password){
         }
               
     }
+    public function UpdateUsers($data){
 
+    }
 
 }
 
