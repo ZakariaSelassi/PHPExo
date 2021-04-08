@@ -25,16 +25,16 @@ class User extends DataBase{
                 <td>'.$item['email'].'</td>
       </tr>';
     }
-    public function createUsers($username,$email,$password){
-       try{
-        $sql = "INSERT TO user (username,email,password) values (:username,:email,:password)";
+public function createUsers($username,$email,$password){
+       try
+       {
+        $sql = "INSERT INTO user (username,email,password) values (:username,:email,:password)";
         $stmt = $this->connect()->prepare($sql);
         $stmt -> bindParam(":username",$username);
         $stmt -> bindParam(":email",$email);
         $stmt -> bindParam(":password",$password);
         
         $data = $stmt->execute();
-
         if(!$data)
         {
             echo $stmt->errorCode();
@@ -46,7 +46,7 @@ class User extends DataBase{
        }catch(PDOException $e){
            echo $e->getMessage();
            return false;
-       }
+        }
               
     }
 
